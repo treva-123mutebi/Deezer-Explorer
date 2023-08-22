@@ -8,41 +8,67 @@
   flex-direction: column;
   background-color: #0F0F0F;
 }
-.search-reseult-section {
-  width: 100%;
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  border-color: #51515A;
-  padding-left: var(--dl-space-space-oneandhalfunits);
-  padding-right: var(--dl-space-space-oneandhalfunits);
-  flex-direction: column;
-  justify-content: flex-start;
-  border-bottom-width: 1px;
-}
+/* Common Styles */
 .search-reseult-text {
   color: rgb(251, 250, 250);
+  text-align: center;
+    /* Center text */
+  margin-top: 20px;
 }
-.search-reseult-container1 {
-  flex: 0 0 auto;
+
+.search-reseult-text2 {
+  color: rgb(241, 232, 232);
+}
+
+.search-reseult-text3 {
+  color: rgb(247, 243, 243);
+  display: none;
+}
+/* Mobile Styles */
+.search-reseult-section {
   width: 100%;
+  height: auto;
+  /* Let height be determined by content */
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  padding: var(--dl-space-space-oneandhalfunits);
+  border-color: #51515A;
+  border-bottom-width: 1px;
 }
+.search-reseult-container1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
 .search-reseult-container2 {
-  flex: 0 0 auto;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 10px;
+  /* Adjust as needed */
 }
 .search-reseult-image {
-  width: 200px;
+  width: 100%;
+  /* Take full width */
+  max-width: 200px;
+  /* Limit image width */
   object-fit: cover;
 }
 .search-reseult-li {
   color: #fbf8f8;
+ 
+  
+}
+.search-reseult-li list-item {
+  margin-bottom: 10px;
+    margin-top: 10px;
 }
 .search-reseult-text2 {
   color: rgb(241, 232, 232);
@@ -50,10 +76,26 @@
 .search-reseult-text3 {
   color: rgb(247, 243, 243);
 }
-@media(max-width: 991px) {
+/* Desktop Styles */
+@media (min-width: 768px) {
   .search-reseult-section {
-    height: auto;
-    padding-left: 0px;
-    padding-right: 0px;
+    flex-direction: row;
+    /* Arrange in a grid on desktop */
+    flex-wrap: wrap;
+    /* Allow items to wrap to next row */
+    justify-content: space-between;
+    /* Space between items */
+    height: 80vh;
+  }
+
+  .search-reseult-container1 {
+    flex: 0 0 calc(25% - 20px);
+    /* Four columns with spacing */
+    margin-bottom: 30px;
+  }
+
+  .search-reseult-text3 {
+    display: block;
+    /* Hide on desktop */
   }
 }

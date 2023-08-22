@@ -11,11 +11,24 @@ const Home = (props) => {
    const [searchText, setSearchText] = useState('');
     const history = useHistory();
 
-    const handleSearch = async () => {
+  const handleSearch = async () => {
+    // Let us navigate to the search result page with the response data from the API call
+   
+
+      
         try {
-            const response = await axios.get(`http://localhost:3000/api/track/${searchText}`);
-            const searchResults = response.data; 
+         
+          const response = await axios.get(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search/track?q=${searchText}`, {
+          headers: {
+            'x-requested-with': 'XMLHttpRequest' 
+          }
+        });
+           
+          const searchResults = response.data; 
+            
           console.log(searchResults);
+          history.push('/search-result', { searchResults: searchResults });
+          
         } catch (error) {
             console.error(error);
         }
@@ -49,7 +62,7 @@ const Home = (props) => {
                   </span>
                 </div>
               </div>
-              <div className="home-buttons"></div>
+             
             </main>
             <div className="home-highlight">
               <div className="home-avatars">

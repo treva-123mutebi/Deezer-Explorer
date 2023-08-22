@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Script from 'dangerous-html/react'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
 import './navbar.css'
 
@@ -11,8 +11,8 @@ const Navbar = (props) => {
       <span className="navbar-text">{props.text}</span>
       <div className="navbar-nav-content">
         <div className="navbar-nav-links">
-          <span className="nav-link">Why us</span>
-          <span className="nav-link">Contact</span>
+         
+          <Link to="/" className="nav-link"><span className="nav-link">Search a Track</span></Link>
         </div>
         <div className="get-started navbar-get-started">
           <span className="navbar-text1">Visit deezer</span>
@@ -51,55 +51,7 @@ const Navbar = (props) => {
           <span className="navbar-text2">Get started</span>
         </div>
       </div>
-      <div className="">
-        <Script
-          html={`<script>
-    /*
-Mobile menu - Code Embed
-*/
-
-/* listenForUrlChangesMobileMenu() makes sure that if you changes pages inside your app, 
-the mobile menu will still work*/
-
-const listenForUrlChangesMobileMenu = () => {
-    let url = location.href;
-    document.body.addEventListener("click", () => {
-        requestAnimationFrame(() => {
-            if (url !== location.href) {
-                runMobileMenuCodeEmbed();
-                url = location.href;
-            }
-        });
-    },
-    true
-    );
-};
-
-const runMobileMenuCodeEmbed = () => {
-    // Mobile menu
-    const mobileMenu = document.querySelector("#mobile-menu")
-
-    // Buttons
-    const closeButton = document.querySelector("#close-mobile-menu")
-    const openButton = document.querySelector("#open-mobile-menu")
-
-    // On openButton click, set the mobileMenu position left to -100vw
-    openButton && openButton.addEventListener("click", function() {
-        mobileMenu.style.transform = "translateX(0%)"
-    })
-
-    // On closeButton click, set the mobileMenu position to 0vw
-    closeButton && closeButton.addEventListener("click", function() {
-        mobileMenu.style.transform = "translateX(100%)"
-    })
-}
-
-runMobileMenuCodeEmbed()
-listenForUrlChangesMobileMenu()
-</script>`}
-          className=""
-        ></Script>
-      </div>
+      
     </nav>
   )
 }

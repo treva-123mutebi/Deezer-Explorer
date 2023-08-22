@@ -60,21 +60,24 @@
   width: auto;
   height: 38px;
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 .home-textinput {
   color: #ffffff;
-  width: 344px;
+  width: 100%;
+  
   height: 38px;
   border-color: #ffffff;
   border-width: 1px;
+  border-radius: 20px;
   background-color: #1d1c1c;
+  padding: 5px 10px;
 }
 .home-get-started {
   width: 150px;
   display: flex;
-  margin-top: -30;
+  margin-top: 10px;
   margin-left: 50px;
   background-color: #80FF44;
 }
@@ -212,6 +215,21 @@
   .home-caption {
     font-size: 14px;
     line-height: 21px;
+  }
+}
+/* Media Query for Mobile View */
+@media (max-width: 768px) {
+  .home-container1 {
+    flex-direction: column;
+    /* Stack elements vertically */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-get-started {
+    margin-top: 10px;
+    margin-left: 0;
+    /* Center button */
   }
 }
 @media(max-width: 479px) {
